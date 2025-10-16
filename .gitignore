@@ -19,6 +19,7 @@ env/
 instance/
 *.sqlite3
 *.db
+*/.env
 
 # Flask specific
 *.pid
