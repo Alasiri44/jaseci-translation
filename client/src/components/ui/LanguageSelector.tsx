@@ -3,22 +3,27 @@ import { ChevronDown } from "lucide-react";
 
 interface Language {
   name: string;
+  code: string;
 }
 
 interface Props {
   languages: Language[];
   selectedLanguage: string;
+  selectedLanguageCode: string;
   setSelectedLanguage: (lang: string) => void;
+  setSelectedLanguageCode: (code: string) => void;
 }
 
 const LanguageSelector: React.FC<Props> = ({
   languages,
   selectedLanguage,
+  selectedLanguageCode,
   setSelectedLanguage,
+  setSelectedLanguageCode,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-
+  
   const filteredLanguages = languages.filter((lang) =>
     lang.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -30,7 +35,7 @@ const LanguageSelector: React.FC<Props> = ({
         className="flex items-center justify-between border-2 border-indigo-500 rounded-lg p-2 cursor-pointer bg-white focus-within:ring-2 focus-within:ring-indigo-400"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-gray-700">
+        <span className="text-gray-700" key={selectedLanguageCode}>
           {selectedLanguage || "Select a language"}
         </span>
         <ChevronDown
@@ -65,6 +70,7 @@ const LanguageSelector: React.FC<Props> = ({
                   }`}
                   onClick={() => {
                     setSelectedLanguage(language.name);
+                    setSelectedLanguageCode(language.code)
                     setIsOpen(false);
                     setSearchTerm("");
                   }}
