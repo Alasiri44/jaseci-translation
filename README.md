@@ -18,24 +18,24 @@ Jaseci Translator is a simple full-stack application that translates text from o
 ## Project Structure
 ```
 jaseci-translator/
-■
-■■■ backend/
-■ ■■■ app.py
-■ ■■■ Pipfile
-■ ■■■ Pipfile.lock
-■ ■■■ jac/
-■ ■■■ translator.jac
-■
-■■■ frontend/
-■ ■■■ package.json
-■ ■■■ src/
-■ ■ ■■■ App.js
-■ ■ ■■■ components/
-■ ■ ■■■ ...
-■ ■■■ public/
-■
-■■■ .gitignore
-■■■ README.md
+│
+├── backend/
+│ ├── app.py
+│ ├── Pipfile
+│ ├── Pipfile.lock
+│ └── jac/
+│ └── translator.jac
+│
+├── frontend/
+│ ├── package.json
+│ ├── src/
+│ │ ├── App.js
+│ │ ├── components/
+│ │ └── ...
+│ └── public/
+│
+├── .gitignore
+└── README.md
 ```
 ---
 ## Installation
