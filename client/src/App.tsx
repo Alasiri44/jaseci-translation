@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     const fetchLanguages = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/data");
+        const res = await axios.get("https://universal-translator-backend.onrender.com/data");
         setLanguages(res.data.languages);
       } catch (err) {
         setError("Failed to fetch languages");
