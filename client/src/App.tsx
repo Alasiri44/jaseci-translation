@@ -4,6 +4,7 @@ import "./App.css";
 import Footer from "./components/ui/Footer";
 import LanguageSelector from "./components/ui/LanguageSelector";
 import { recognizeSpeech } from "./components/speechRecognition";
+import Alert from "./components/ui/Alert";
 
 interface Language {
   name: string;
@@ -61,6 +62,7 @@ function App() {
         })
         .catch((error) => {
           console.error("Error:", error);
+          setError("Failed to translate");
         });
     } catch (err) {
       setError("Error translating the language");
@@ -75,7 +77,7 @@ function App() {
       utterance.lang = language;
       speechSynthesis.speak(utterance);
     } else {
-      alert("Sorry, your browser doesn't support text-to-speech.");
+      setError("Sorry, your browser doesn't support text-to-speech.");
     }
   }
 
@@ -109,12 +111,13 @@ function App() {
       });
     } catch (error) {
       console.error(error);
+      setError("Failed to translate");
     }
   };
 
   loading && <p>Loading....</p>;
 
-  error && <p>{error}</p>;
+
   return (
     <>
       <div className="box flex flex-col items-center text-center p-6 bg-gradient-to-b from-white to-gray-50 min-h-screen">
@@ -208,6 +211,7 @@ function App() {
         </div>
       </div>
       <Footer />
+      {error && <Alert message={error} onClose={() => setError(null)} />}
     </>
   );
 }
