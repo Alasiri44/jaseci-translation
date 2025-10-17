@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <footer className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 py-3 text-center text-sm text-gray-600">
+      <footer className="sticky bottom-0 left-0 w-full bg-white border-t border-gray-200 py-3 text-center text-sm text-gray-600">
         <p className="mb-2">The realm of Elecon • Supporting 40+ languages</p>
 
         <div className="flex justify-center space-x-5 mb-2">
