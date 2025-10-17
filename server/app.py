@@ -10,8 +10,7 @@ load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 app = Flask(__name__)
-CORS(app)
-# AIzaSyAVF_mYZeWul5Fn-DcaLIfouqsKGjbHZjU
+CORS(app, resources={r"/*": {"origins": "https://universal-translator-fx40.onrender.com"}})
 
 llm = Model(model_name='gemini/gemini-2.0-flash')
 
