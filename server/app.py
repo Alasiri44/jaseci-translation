@@ -4,6 +4,7 @@ import jaclang
 from byllm import Model, by
 from dotenv import load_dotenv
 import os
+import json
 
 load_dotenv()  
 
@@ -28,6 +29,13 @@ def handle_translation():
         data = request.get_json()
         response = translate(source_language=data.get('source_language'), target_language=data.get('target_language'), text=data.get('text'))
         return make_response({'translated_text': response})
+    
+@app.route('/data')
+def get_data():
+    data_path = os.path.join(app.root_path, 'data.json')
+    with open(data_path) as f:
+        data = json.load(f)
+    return make_response(data)
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
