@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     const fetchLanguages = async () => {
       try {
-        const res = await axios.get("/data.json");
+        const res = await axios.get("http://localhost:5000/data");
         setLanguages(res.data.languages);
       } catch (err) {
         setError("Failed to fetch languages");
