@@ -56,7 +56,7 @@ function App() {
       };
 
       axios
-        .post("http://127.0.0.1:5000/translate", data)
+        .post("https://universal-translator-backend.onrender.com/translate", data)
         .then((response) => {
           setTranslatedText(response.data.translated_text);
         })
