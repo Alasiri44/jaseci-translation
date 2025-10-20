@@ -1,8 +1,11 @@
 # Jaseci Translator
 ## Overview
-Jaseci Translator is a simple full-stack application that translates text from one language to another uThe project supports all languages in the world, offering a clean and efficient interface for real-time ---
+Jaseci Translator is a simple full-stack application that translates text and speech from one language to another.
+The project supports all languages in the world, offering a clean and efficient interface for real-time ---
 ## Features
 - Translate text between any two world languages
+- Text-to-speech capability for reading translations aloud
+- Voice-to-voice translation with spoken output in the target language
 - Fast and lightweight backend powered by Flask
 - Interactive and responsive frontend built with React
 - Jaseci integration for natural language processing and translation logic
@@ -87,7 +90,6 @@ Response:
 ```
 ---
 ## Future Improvements
-- Add speech-to-text and text-to-speech support
 - Enable automatic language detection
 - Store translation history for users
 ---
